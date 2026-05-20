@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-variant": "#e0e3e5",
+                    "on-secondary-fixed": "#0e2000",
+                    "error-container": "#ffdad6",
+                    "secondary-fixed": "#cfecae",
+                    "on-primary-fixed": "#001e2d",
+                    "inverse-primary": "#99cdf0",
+                    "on-primary": "#ffffff",
+                    "primary": "#2d6482",
+                    "on-surface": "#191c1e",
+                    "primary-fixed-dim": "#99cdf0",
+                    "on-tertiary-fixed": "#281801",
+                    "primary-fixed": "#c6e7ff",
+                    "inverse-on-surface": "#eff1f3",
+                    "on-secondary": "#ffffff",
+                    "inverse-surface": "#2d3133",
+                    "surface-container-low": "#f2f4f6",
+                    "surface-tint": "#2d6482",
+                    "on-error-container": "#93000a",
+                    "surface": "#f7f9fb",
+                    "on-error": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "outline-variant": "#c1c7ce",
+                    "secondary-container": "#cce9ab",
+                    "on-tertiary-container": "#513d1f",
+                    "on-primary-container": "#004562",
+                    "surface-container-highest": "#e0e3e5",
+                    "error": "#ba1a1a",
+                    "on-primary-fixed-variant": "#0a4c69",
+                    "secondary-fixed-dim": "#b4d094",
+                    "surface-container": "#eceef0",
+                    "on-tertiary": "#ffffff",
+                    "primary-container": "#7fb3d5",
+                    "surface-dim": "#d8dadc",
+                    "on-secondary-fixed-variant": "#364d1f",
+                    "on-secondary-container": "#526a38",
+                    "surface-container-high": "#e6e8ea",
+                    "surface-bright": "#f7f9fb",
+                    "background": "#f7f9fb",
+                    "on-background": "#191c1e",
+                    "secondary": "#4d6634",
+                    "tertiary": "#725a3a",
+                    "tertiary-container": "#c5a881",
+                    "on-tertiary-fixed-variant": "#584324",
+                    "tertiary-fixed": "#feddb4",
+                    "on-surface-variant": "#41484d",
+                    "outline": "#71787e",
+                    "tertiary-fixed-dim": "#e1c29a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "20px",
+                    "xl": "64px",
+                    "gutter": "16px",
+                    "base": "8px",
+                    "md": "24px",
+                    "xs": "4px",
+                    "lg": "40px",
+                    "sm": "12px",
+                    "margin-desktop": "120px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Manrope"],
+                    "label-sm": ["Manrope"],
+                    "display-temp": ["Manrope"],
+                    "headline-md": ["Manrope"],
+                    "body-lg": ["Manrope"],
+                    "headline-lg-mobile": ["Manrope"],
+                    "body-md": ["Manrope"]
+            },
+            "fontSize": {
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "display-temp": ["96px", {"lineHeight": "100px", "letterSpacing": "-0.04em", "fontWeight": "200"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "500"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+      body {
+        background: linear-gradient(180deg, #c6e7ff 0%, #f7f9fb 100%);
+        min-height: 100vh;
+      }
+      .glass-card {
+        background: rgba(255, 255, 255, 0.4);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0px 10px 30px rgba(0,0,0,0.04);
+      }
+      .hide-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .hide-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md text-on-surface">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 backdrop-blur-xl bg-white/20 border-b border-white/20 shadow-sm">
+<div class="flex justify-between items-center px-margin-mobile py-base max-w-7xl mx-auto">
+<div class="flex items-center gap-base active:scale-95 transition-all duration-200 cursor-pointer">
+<span class="material-symbols-outlined text-primary">menu</span>
+</div>
+<h1 id="city-name" class="font-headline-md text-headline-md font-semibold text-on-surface">City</h1>
+<div class="flex items-center gap-base active:scale-95 transition-all duration-200 cursor-pointer">
+<span class="material-symbols-outlined text-primary">search</span>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-32 px-margin-mobile max-w-7xl mx-auto space-y-xl">
+<!-- Hero Section: Current Weather -->
+<section class="text-center space-y-xs">
+<div class="flex flex-col items-center">
+<span id="hero-temp" class="font-display-temp text-display-temp text-primary">--°</span>
+<div class="flex items-center gap-xs text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">wb_sunny</span>
+<span id="hero-condition" class="font-headline-md text-headline-md">--</span>
+</div>
+<div class="mt-base flex gap-md text-on-surface-variant font-body-md text-body-md">
+<span id="feels-like">Feels like --</span>
+<span id="hi-lo">H: -- L: --</span>
+</div>
+</div>
+</section>
+<!-- Hourly Forecast -->
+<section class="space-y-md">
+<h2 class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant opacity-70 px-base">Hourly Forecast</h2>
+<div id="hourly-chips" class="flex overflow-x-auto hide-scrollbar gap-gutter pb-xs">
+  <!-- Hourly chips will be injected here -->
+</div>
+</section>
+<!-- Main Layout Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-md items-start">
+<!-- 7-Day Forecast (Left/Primary Column) -->
+<section class="md:col-span-5 glass-card rounded-xl p-md space-y-md">
+<div class="flex items-center gap-xs text-on-surface-variant opacity-70">
+<span class="material-symbols-outlined text-sm">calendar_month</span>
+<h2 class="font-label-sm text-label-sm uppercase tracking-widest">7-Day Forecast</h2>
+</div>
+<div class="space-y-base">
+<!-- Daily Forecast Rows -->
+<div class="flex items-center justify-between py-sm border-b border-white/10">
+<span class="font-body-md text-body-md w-24">Today</span>
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">wb_sunny</span>
+<div class="flex gap-md w-24 justify-end">
+<span class="font-body-md text-body-md font-semibold">25°</span>
+<span class="font-body-md text-body-md text-on-surface-variant opacity-60">18°</span>
+</div>
+</div>
+<div class="flex items-center justify-between py-sm border-b border-white/10">
+<span class="font-body-md text-body-md w-24">Tuesday</span>
+<span class="material-symbols-outlined text-primary">cloud</span>
+<div class="flex gap-md w-24 justify-end">
+<span class="font-body-md text-body-md font-semibold">22°</span>
+<span class="font-body-md text-body-md text-on-surface-variant opacity-60">17°</span>
+</div>
+</div>
+<div class="flex items-center justify-between py-sm border-b border-white/10">
+<span class="font-body-md text-body-md w-24">Wednesday</span>
+<span class="material-symbols-outlined text-primary">rainy</span>
+<div class="flex gap-md w-24 justify-end">
+<span class="font-body-md text-body-md font-semibold">19°</span>
+<span class="font-body-md text-body-md text-on-surface-variant opacity-60">15°</span>
+</div>
+</div>
+<div class="flex items-center justify-between py-sm border-b border-white/10">
+<span class="font-body-md text-body-md w-24">Thursday</span>
+<span class="material-symbols-outlined text-primary">partly_cloudy_day</span>
+<div class="flex gap-md w-24 justify-end">
+<span class="font-body-md text-body-md font-semibold">21°</span>
+<span class="font-body-md text-body-md text-on-surface-variant opacity-60">16°</span>
+</div>
+</div>
+<div class="flex items-center justify-between py-sm border-b border-white/10">
+<span class="font-body-md text-body-md w-24">Friday</span>
+<span class="material-symbols-outlined text-primary">wb_sunny</span>
+<div class="flex gap-md w-24 justify-end">
+<span class="font-body-md text-body-md font-semibold">24°</span>
+<span class="font-body-md text-body-md text-on-surface-variant opacity-60">18°</span>
+</div>
+</div>
+<div class="flex items-center justify-between py-sm">
+<span class="font-body-md text-body-md w-24">Saturday</span>
+<span class="material-symbols-outlined text-primary">wb_sunny</span>
+<div class="flex gap-md w-24 justify-end">
+<span class="font-body-md text-body-md font-semibold">26°</span>
+<span class="font-body-md text-body-md text-on-surface-variant opacity-60">19°</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Weather Details Grid (Right Column) -->
+<div class="md:col-span-7 grid grid-cols-2 gap-gutter">
+<!-- Rain Chance -->
+<article class="glass-card rounded-xl p-md flex flex-col justify-between aspect-square">
+<div class="flex items-center gap-xs text-on-surface-variant opacity-70">
+<span class="material-symbols-outlined text-sm">umbrella</span>
+<h3 class="font-label-sm text-label-sm uppercase">Rain Chance</h3>
+</div>
+<div class="space-y-xs">
+<p class="font-headline-lg text-headline-lg">10%</p>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[10%] rounded-full"></div>
+</div>
+</div>
+</article>
+<!-- Wind -->
+<article class="glass-card rounded-xl p-md flex flex-col justify-between aspect-square">
+<div class="flex items-center gap-xs text-on-surface-variant opacity-70">
+<span class="material-symbols-outlined text-sm">air</span>
+<h3 class="font-label-sm text-label-sm uppercase">Wind</h3>
+</div>
+<div class="space-y-xs">
+<p id="wind-value" class="font-headline-lg text-headline-lg">-- <span class="text-body-md">km/h</span></p>
+<p id="wind-dir" class="font-label-sm text-label-sm text-on-surface-variant">--</p>
+</div>
+</article>
+<!-- Humidity -->
+<article class="glass-card rounded-xl p-md flex flex-col justify-between aspect-square">
+<div class="flex items-center gap-xs text-on-surface-variant opacity-70">
+<span class="material-symbols-outlined text-sm">humidity_mid</span>
+<h3 class="font-label-sm text-label-sm uppercase">Humidity</h3>
+</div>
+<div class="space-y-xs">
+<p id="humidity-value" class="font-headline-lg text-headline-lg">--%</p>
+<p id="humidity-desc" class="font-label-sm text-label-sm text-on-surface-variant">--</p>
+</div>
+</article>
+<!-- UV Index -->
+<article class="glass-card rounded-xl p-md flex flex-col justify-between aspect-square">
+<div class="flex items-center gap-xs text-on-surface-variant opacity-70">
+<span class="material-symbols-outlined text-sm">wb_sunny</span>
+<h3 class="font-label-sm text-label-sm uppercase">UV Index</h3>
+</div>
+<div class="space-y-xs">
+<p id="uv-value" class="font-headline-lg text-headline-lg">--</p>
+<p id="uv-desc" class="font-label-sm text-label-sm text-on-surface-variant">--</p>
+</div>
+</article>
+<!-- Air Quality -->
+<article class="glass-card rounded-xl p-md flex flex-col justify-between col-span-2 md:col-span-1">
+<div class="flex items-center gap-xs text-on-surface-variant opacity-70">
+<span class="material-symbols-outlined text-sm">health_and_safety</span>
+<h3 class="font-label-sm text-label-sm uppercase">Air Quality</h3>
+</div>
+<div class="space-y-xs mt-base">
+<p id="aqi-value" class="font-headline-md text-headline-md">--</p>
+<p id="aqi-desc" class="font-label-sm text-label-sm text-on-surface-variant">--</p>
+</div>
+</article>
+<!-- Pressure -->
+<article class="glass-card rounded-xl p-md flex flex-col justify-between col-span-2 md:col-span-1">
+<div class="flex items-center gap-xs text-on-surface-variant opacity-70">
+<span class="material-symbols-outlined text-sm">compress</span>
+<h3 class="font-label-sm text-label-sm uppercase">Pressure</h3>
+</div>
+<div class="space-y-xs mt-base">
+<p id="pressure-value" class="font-headline-md text-headline-md">--</p>
+<p id="pressure-desc" class="font-label-sm text-label-sm text-on-surface-variant">--</p>
+</div>
+</article>
+</div>
+</div>
+<!-- Sunrise/Sunset Section -->
+<section class="glass-card rounded-xl p-md">
+<div class="flex items-center gap-xs text-on-surface-variant opacity-70 mb-md">
+<span class="material-symbols-outlined text-sm">wb_twilight</span>
+<h2 class="font-label-sm text-label-sm uppercase tracking-widest">Sunrise &amp; Sunset</h2>
+</div>
+<div class="relative h-32 w-full max-w-lg mx-auto overflow-hidden">
+<!-- SVG Arc -->
+<svg class="absolute bottom-0 w-full h-24 stroke-on-surface-variant/20 fill-none" viewbox="0 0 100 50">
+<path d="M 10 50 A 40 40 0 0 1 90 50" stroke-dasharray="2,2" stroke-width="0.5"></path>
+<!-- Current Position Dot -->
+<circle class="text-tertiary" cx="70" cy="18" fill="currentColor" r="2"></circle>
+</svg>
+<div class="absolute bottom-0 left-0 text-center">
+<p id="sunrise" class="font-label-sm text-label-sm text-on-surface-variant">--:--</p>
+<p class="font-body-md text-body-md font-bold">Sunrise</p>
+</div>
+<div class="absolute bottom-0 right-0 text-center">
+<p id="sunset" class="font-label-sm text-label-sm text-on-surface-variant">--:--</p>
+<p class="font-body-md text-body-md font-bold">Sunset</p>
+</div>
+</div>
+</section>
+</main>
+<script>
+// Fetch and render weather for city based on URL params
+async function renderCityWeather() {
+  const params = new URLSearchParams(location.search);
+  const city = params.get('city') ? decodeURIComponent(params.get('city')) : 'Unknown';
+  const lat = params.get('lat') || '52.52';
+  const lon = params.get('lon') || '13.41';
+  document.getElementById('city-name').textContent = city.replace(/\+/g, ' ');
+
+  const API = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,wind_speed_10m&hourly=temperature_2m,relative_humidity_2m,wind_speed_10m&timezone=auto`;
+  try {
+    const res = await fetch(API);
+    if (!res.ok) throw new Error('Network error');
+    const data = await res.json();
+
+    const current = data.current || data.current_weather || {};
+    const currentTemp = current.temperature_2m ?? current.temperature ?? '--';
+    const currentWind = current.wind_speed_10m ?? current.windspeed ?? '--';
+    document.getElementById('hero-temp').textContent = (currentTemp === '--' ? '--' : Number(currentTemp).toFixed(1)) + '°';
+    document.getElementById('hero-condition').textContent = 'Now';
+    document.getElementById('feels-like').textContent = 'Feels like ' + (currentTemp === '--' ? '--' : Number(currentTemp).toFixed(1)) + '°';
+    document.getElementById('wind-value').innerHTML = (currentWind === '--' ? '--' : Number(currentWind).toFixed(1)) + ' <span class="text-body-md">km/h</span>';
+
+    const hourly = data.hourly || {};
+    const times = hourly.time || [];
+    const temps = hourly.temperature_2m || [];
+    const winds = hourly.wind_speed_10m || [];
+    const rh = hourly.relative_humidity_2m || [];
+
+    // hi/lo from first 24 hours
+    const count = Math.min(24, temps.length);
+    if (count > 0) {
+      const slice = temps.slice(0, count).map(Number);
+      const hi = Math.max(...slice).toFixed(0);
+      const lo = Math.min(...slice).toFixed(0);
+      document.getElementById('hi-lo').textContent = `H: ${hi}° L: ${lo}°`;
+    }
+
+    // humidity fallback
+    if (rh.length) document.getElementById('humidity-value').textContent = (Number(rh[0]).toFixed(0) + '%');
+
+    // hourly chips
+    const container = document.getElementById('hourly-chips');
+    container.innerHTML = '';
+    for (let i = 0; i < Math.min(24, times.length); i++) {
+      const t = new Date(times[i]);
+      const hour = t.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'});
+      const temp = temps[i] !== undefined ? Number(temps[i]).toFixed(0) + '°' : '--';
+      const chip = document.createElement('div');
+      chip.className = 'flex-none glass-card rounded-full p-4 flex flex-col items-center gap-xs min-w-[70px]';
+      chip.innerHTML = `<span class="font-label-sm text-label-sm text-on-surface-variant">${hour}</span><span class="material-symbols-outlined text-on-surface-variant">wb_sunny</span><span class="font-body-md text-body-md text-on-surface">${temp}</span>`;
+      container.appendChild(chip);
+    }
+
+  } catch (err) {
+    console.error('Could not load city weather', err);
+  }
+}
+
+renderCityWeather();
+</script>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 backdrop-blur-2xl bg-white/40 border-t border-white/10 shadow-[0px_-10px_30px_rgba(0,0,0,0.04)]">
+<div class="flex justify-around items-center px-lg py-sm pb-safe max-w-7xl mx-auto">
+<button class="flex flex-col items-center justify-center bg-tertiary-container text-on-tertiary-container rounded-full p-3 active:scale-90 transition-transform duration-150">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">cloud</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant p-3 hover:text-primary active:scale-90 transition-transform duration-150">
+<span class="material-symbols-outlined">location_on</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant p-3 hover:text-primary active:scale-90 transition-transform duration-150">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+</nav>
+</body></html>

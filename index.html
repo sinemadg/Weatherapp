@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-variant": "#e0e3e5",
+                    "on-secondary-fixed": "#0e2000",
+                    "error-container": "#ffdad6",
+                    "secondary-fixed": "#cfecae",
+                    "on-primary-fixed": "#001e2d",
+                    "inverse-primary": "#99cdf0",
+                    "on-primary": "#ffffff",
+                    "primary": "#2d6482",
+                    "on-surface": "#191c1e",
+                    "primary-fixed-dim": "#99cdf0",
+                    "on-tertiary-fixed": "#281801",
+                    "primary-fixed": "#c6e7ff",
+                    "inverse-on-surface": "#eff1f3",
+                    "on-secondary": "#ffffff",
+                    "inverse-surface": "#2d3133",
+                    "surface-container-low": "#f2f4f6",
+                    "surface-tint": "#2d6482",
+                    "on-error-container": "#93000a",
+                    "surface": "#f7f9fb",
+                    "on-error": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "outline-variant": "#c1c7ce",
+                    "secondary-container": "#cce9ab",
+                    "on-tertiary-container": "#513d1f",
+                    "on-primary-container": "#004562",
+                    "surface-container-highest": "#e0e3e5",
+                    "error": "#ba1a1a",
+                    "on-primary-fixed-variant": "#0a4c69",
+                    "secondary-fixed-dim": "#b4d094",
+                    "surface-container": "#eceef0",
+                    "on-tertiary": "#ffffff",
+                    "primary-container": "#7fb3d5",
+                    "surface-dim": "#d8dadc",
+                    "on-secondary-fixed-variant": "#364d1f",
+                    "on-secondary-container": "#526a38",
+                    "surface-container-high": "#e6e8ea",
+                    "surface-bright": "#f7f9fb",
+                    "background": "#f7f9fb",
+                    "on-background": "#191c1e",
+                    "secondary": "#4d6634",
+                    "tertiary": "#725a3a",
+                    "tertiary-container": "#c5a881",
+                    "on-tertiary-fixed-variant": "#584324",
+                    "tertiary-fixed": "#feddb4",
+                    "on-surface-variant": "#41484d",
+                    "outline": "#71787e",
+                    "tertiary-fixed-dim": "#e1c29a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "20px",
+                    "xl": "64px",
+                    "gutter": "16px",
+                    "base": "8px",
+                    "md": "24px",
+                    "xs": "4px",
+                    "lg": "40px",
+                    "sm": "12px",
+                    "margin-desktop": "120px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Manrope"],
+                    "label-sm": ["Manrope"],
+                    "display-temp": ["Manrope"],
+                    "headline-md": ["Manrope"],
+                    "body-lg": ["Manrope"],
+                    "headline-lg-mobile": ["Manrope"],
+                    "body-md": ["Manrope"]
+            },
+            "fontSize": {
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "display-temp": ["96px", {"lineHeight": "100px", "letterSpacing": "-0.04em", "fontWeight": "200"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "500"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Manrope', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen pb-32">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 w-full z-50 backdrop-blur-xl bg-white/20 border-b border-white/20 shadow-sm flex justify-between items-center px-margin-mobile py-base">
+<button class="text-primary hover:bg-surface-variant/30 active:scale-95 transition-all duration-200 p-2 rounded-full">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="font-headline-md text-headline-md font-semibold text-on-surface">London, UK</h1>
+<button class="text-primary hover:bg-surface-variant/30 active:scale-95 transition-all duration-200 p-2 rounded-full">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+</header>
+<main class="pt-24 px-margin-mobile max-w-2xl mx-auto">
+<!-- Search Section -->
+<section class="mb-xl">
+<div class="relative group">
+    <div class="absolute inset-y-0 left-4 flex items-center pointer-events-none text-outline">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</div>
+    <input id="city-search" class="w-full bg-white/40 border border-white/20 backdrop-blur-md rounded-full py-4 pl-12 pr-6 text-body-md focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all shadow-sm" placeholder="Search for a city..." type="text"/>
+</div>
+</section>
+<!-- My Locations Section -->
+<section>
+<div class="flex justify-between items-center mb-md">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">My Locations</h2>
+<button class="text-primary font-label-sm text-label-sm uppercase tracking-wider">Edit</button>
+</div>
+<div class="space-y-base">
+<!-- London Card -->
+<div class="glass-card city-card rounded-xl p-md flex justify-between items-center shadow-[0px_10px_30px_rgba(0,0,0,0.04)] active:scale-[0.98] transition-all cursor-pointer" data-name="London" data-lat="51.5074" data-lon="-0.1278" role="button">
+<div class="flex flex-col">
+<span class="font-headline-md text-headline-md text-on-surface">London</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">10:42 AM</span>
+</div>
+<div class="flex items-center gap-md">
+<div class="flex flex-col items-end">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="cloud">cloud</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Cloudy</span>
+</div>
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-primary">12°</span>
+</div>
+</div>
+<!-- Berlin Card -->
+<div class="glass-card city-card rounded-xl p-md flex justify-between items-center shadow-[0px_10px_30px_rgba(0,0,0,0.04)] active:scale-[0.98] transition-all cursor-pointer" data-name="Berlin" data-lat="52.52" data-lon="13.41" role="button">
+<div class="flex flex-col">
+<span class="font-headline-md text-headline-md text-on-surface">Berlin</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">11:42 AM</span>
+</div>
+<div class="flex items-center gap-md">
+<div class="flex flex-col items-end">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="sunny">sunny</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Sunny</span>
+</div>
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-primary">18°</span>
+</div>
+</div>
+<!-- Tokyo Card -->
+<div class="glass-card city-card rounded-xl p-md flex justify-between items-center shadow-[0px_10px_30px_rgba(0,0,0,0.04)] active:scale-[0.98] transition-all cursor-pointer" data-name="Tokyo" data-lat="35.6895" data-lon="139.6917" role="button">
+<div class="flex flex-col">
+<span class="font-headline-md text-headline-md text-on-surface">Tokyo</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">6:42 PM</span>
+</div>
+<div class="flex items-center gap-md">
+<div class="flex flex-col items-end">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="rainy">rainy</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Showers</span>
+</div>
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-primary">22°</span>
+</div>
+</div>
+<!-- New York Card -->
+<div class="glass-card city-card rounded-xl p-md flex justify-between items-center shadow-[0px_10px_30px_rgba(0,0,0,0.04)] active:scale-[0.98] transition-all cursor-pointer" data-name="New York" data-lat="40.7128" data-lon="-74.0060" role="button">
+<div class="flex flex-col">
+<span class="font-headline-md text-headline-md text-on-surface">New York</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">5:42 AM</span>
+</div>
+<div class="flex items-center gap-md">
+<div class="flex flex-col items-end">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="partly_cloudy_day">partly_cloudy_day</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Partial</span>
+</div>
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-primary">15°</span>
+</div>
+</div>
+</div>
+</section>
+<!-- World Map Visual Hint -->
+<section class="mt-xl">
+<div class="relative w-full h-48 rounded-xl overflow-hidden glass-card">
+<img alt="Global weather map visualization" class="w-full h-full object-cover opacity-60 mix-blend-overlay" data-alt="A minimalist and soft-focus world map graphic with light blue and soft gray tones, suggesting a global weather overview. The visual style is clean and professional, with a high-key lighting aesthetic that fits a modern weather application. The mood is calm and informative, using a natural minimalism palette with a soft backdrop blur effect." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAKYsvBVc1ha7zgYxv8-wwPF9hl5GyaG1hp0zzLPwpq4l9iYMe9J8gPCblzP9ZnS5a0CeetCZ1AEBIgSsZa4jT_LkavccVzQIN5RIXuvjrnRungZj8cd3URkLZc3lO8Qs3wWOLYmk1yR2S8ukc5zItaEVS2XGsKBZlC14C5uIV2v0EpFm0wbyOkiSSqBA85Nh4pBlzcQRD4_P3yeWt5GPSMMRxqndteh6U9I1bn0_FqCmPMMl3JklkqeMUfKJna0ZBFo-m_eIq"/>
+<div class="absolute inset-0 flex flex-col items-center justify-center bg-primary/10">
+<span class="material-symbols-outlined text-primary text-5xl mb-base" data-icon="map">map</span>
+<span class="font-headline-md text-headline-md text-primary">Explore World Weather</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Live Weather Integration -->
+<section class="px-margin-mobile max-w-2xl mx-auto mb-xl">
+  <div class="glass-card rounded-xl p-md shadow-[0px_10px_30px_rgba(0,0,0,0.04)]">
+    <h3 class="font-headline-md text-headline-md text-on-surface">Live Weather (Berlin)</h3>
+    <div id="current" class="mt-md">
+      <div class="flex items-baseline justify-between">
+        <div>
+          <div id="current-temp" class="font-display-temp text-display-temp text-primary">--°</div>
+          <div id="current-desc" class="text-body-md text-on-surface-variant">--</div>
+        </div>
+        <div class="text-right">
+          <div id="current-wind" class="text-body-md text-on-surface-variant">Wind: -- m/s</div>
+          <div id="current-time" class="text-label-sm text-on-surface-variant">--</div>
+        </div>
+      </div>
+    </div>
+    <div id="hourly" class="mt-md overflow-auto">
+      <table class="w-full text-left text-sm">
+        <thead>
+          <tr>
+            <th class="py-2">Time</th>
+            <th class="py-2">Temp (°C)</th>
+            <th class="py-2">Wind (m/s)</th>
+            <th class="py-2">RH (%)</th>
+          </tr>
+        </thead>
+        <tbody id="hourly-body"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<script>
+// Open-Meteo API URL (Berlin coordinates as in example)
+const API_URL = 'https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&current=temperature_2m,wind_speed_10m&hourly=temperature_2m,relative_humidity_2m,wind_speed_10m&timezone=auto';
+
+async function loadWeather() {
+  try {
+    const res = await fetch(API_URL);
+    if (!res.ok) throw new Error('Network response was not ok');
+    const data = await res.json();
+
+    // Current weather (API may include `current` or `current_weather`)
+    const current = data.current || data.current_weather || {};
+    const currentTemp = current.temperature_2m ?? current.temperature ?? '--';
+    const currentWind = current.wind_speed_10m ?? current.windspeed ?? '--';
+    const currentTime = current.time ?? '--';
+
+    document.getElementById('current-temp').textContent = (currentTemp === '--' ? '--' : Number(currentTemp).toFixed(1)) + '°';
+    document.getElementById('current-wind').textContent = 'Wind: ' + (currentWind === '--' ? '--' : Number(currentWind).toFixed(1)) + ' m/s';
+    document.getElementById('current-time').textContent = currentTime;
+
+    // Hourly data
+    const hourly = data.hourly || {};
+    const times = hourly.time || [];
+    const temps = hourly.temperature_2m || [];
+    const winds = hourly.wind_speed_10m || [];
+    const rh = hourly.relative_humidity_2m || [];
+
+    const tbody = document.getElementById('hourly-body');
+    tbody.innerHTML = '';
+
+    // Render first 24 hourly entries (or all if shorter)
+    const count = Math.min(24, times.length);
+    for (let i = 0; i < count; i++) {
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td class="py-2">${times[i] ?? '--'}</td>
+        <td class="py-2">${temps[i] !== undefined ? Number(temps[i]).toFixed(1) : '--'}</td>
+        <td class="py-2">${winds[i] !== undefined ? Number(winds[i]).toFixed(1) : '--'}</td>
+        <td class="py-2">${rh[i] !== undefined ? Number(rh[i]).toFixed(0) : '--'}</td>
+      `;
+      tbody.appendChild(tr);
+    }
+  } catch (err) {
+    console.error('Failed loading weather', err);
+    document.getElementById('current-desc').textContent = 'Failed to load weather data';
+  }
+}
+
+// Load on start
+loadWeather();
+</script>
+<script>
+// Search filtering and navigation to city page
+document.addEventListener('DOMContentLoaded', () => {
+  const search = document.getElementById('city-search');
+  if (search) {
+    search.addEventListener('input', (e) => {
+      const q = e.target.value.toLowerCase().trim();
+      document.querySelectorAll('.city-card').forEach(card => {
+        const name = (card.dataset.name || '').toLowerCase();
+        card.style.display = name.includes(q) ? '' : 'none';
+      });
+    });
+  }
+
+  // Click a city card to open cityweather.html with coords
+  document.querySelectorAll('.city-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const name = encodeURIComponent(card.dataset.name || '');
+      const lat = card.dataset.lat;
+      const lon = card.dataset.lon;
+      if (lat && lon) {
+        window.location.href = `cityweather.html?city=${name}&lat=${lat}&lon=${lon}`;
+      }
+    });
+  });
+});
+</script>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 w-full z-50 backdrop-blur-2xl bg-white/40 border-t border-white/10 shadow-[0px_-10px_30px_rgba(0,0,0,0.04)] flex justify-around items-center px-lg py-sm pb-safe">
+<button class="flex flex-col items-center justify-center text-on-surface-variant p-3 hover:text-primary active:scale-90 transition-transform duration-150">
+<span class="material-symbols-outlined" data-icon="cloud">cloud</span>
+<span class="font-label-sm text-label-sm">Weather</span>
+</button>
+<button class="flex flex-col items-center justify-center bg-tertiary-container text-on-tertiary-container rounded-full p-3 active:scale-90 transition-transform duration-150">
+<span class="material-symbols-outlined" data-icon="location_on">location_on</span>
+<span class="font-label-sm text-label-sm">Cities</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant p-3 hover:text-primary active:scale-90 transition-transform duration-150">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-sm text-label-sm">Settings</span>
+</button>
+</nav>
+</body></html>x
